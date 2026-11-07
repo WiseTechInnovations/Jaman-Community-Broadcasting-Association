@@ -162,3 +162,17 @@ body { background: linear-gradient(155deg, #fff5ed, #fff 50%, #fff1e6); }
 }
 
 .welcome-track b { padding-inline: .7em; color: #ffe2c5; font-size: .68em; vertical-align: .1em; }
+
+.menu-toggle { display: none; }
+@media (max-width: 690px) {
+  .mast .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 12px; min-height: 0; padding-block: 13px; }
+  .mast .nav { grid-column: 1 / -1; display: grid; gap: 4px; margin-top: 12px; padding: 6px; border: 1px solid #ffffff55; border-radius: 12px; background: #680d22; }
+  .mast .nav a { justify-content: space-between; min-height: 46px; padding: 9px 12px; border: 0; border-radius: 7px; font-size: .92rem; }
+  .mast .nav a[aria-current="page"] { background: #ffffff20; }
+  .mast .nav a:hover { background: #ffffff18; }
+  .menu-toggle:not([hidden]) { display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border: 1px solid #ffffff80; border-radius: 10px; background: #ffffff17; color: #fff; cursor: pointer; }
+  .menu-toggle:focus-visible { outline: 2px solid #fff4d8; outline-offset: 3px; }
+  .menu-cross, .menu-toggle[aria-expanded="true"] .menu-bars { display: none; }
+  .menu-toggle[aria-expanded="true"] .menu-cross { display: inline; }
+  .menu-toggle:not([hidden])[aria-expanded="false"] + .nav { display: none; }
+}
